@@ -1,0 +1,13 @@
+#!/bin/sh -e
+
+pushd ${HOME} >/dev/null
+
+# if [ -d ./bundle/ruby -a -f ./src/${APP_ROOT}/Gemfile.lock ]; then
+#   BUNDLE_SAVE="bundle/ruby src/${APP_ROOT}/Gemfile.lock"
+# fi
+# if [ -d ./src/${APP_ROOT}/public/assets]; then
+#   ASSETS_SAVE="./src/${APP_ROOT}/public/assets"
+# fi
+tar cf - bundle/ruby src/${APP_ROOT}/Gemfile.lock ./src/${APP_ROOT}/public/assets
+
+popd >/dev/null
